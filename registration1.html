@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration Form</title>
+<style>
+*{box-sizing:border-box;font-family:Arial}
+body{
+  background:#667eea;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  margin:0;
+}
+form{
+  background:white;
+  padding:25px;
+  width:320px;
+  border-radius:10px;
+}
+h2{text-align:center}
+input{
+  width:100%;
+  padding:10px;
+  margin:7px 0;
+  border:1px solid #ccc;
+  border-radius:5px;
+}
+button{
+  width:100%;
+  padding:10px;
+  background:#667eea;
+  color:white;
+  border:0;
+  border-radius:5px;
+  cursor:pointer;
+}
+#msg{text-align:center;font-weight:bold}
+</style>
+</head>
+
+<body>
+<form onsubmit="register(event)">
+  <h2>Register</h2>
+  <input type="text" placeholder="Full Name" required>
+  <input type="email" placeholder="Email" required>
+  <input type="tel" placeholder="Phone Number" required>
+  <input type="password" id="pass" placeholder="Password" required>
+  <input type="password" id="confirm" placeholder="Confirm Password" required>
+  <button>Register</button>
+  <p id="msg"></p>
+</form>
+
+<script>
+function register(e){
+  e.preventDefault();
+  let p=document.getElementById("pass").value;
+  let c=document.getElementById("confirm").value;
+  document.getElementById("msg").innerText =
+  p==c ? "Registration Successful!" : "Passwords do not match!";
+}
+</script>
+</body>
+</html>
